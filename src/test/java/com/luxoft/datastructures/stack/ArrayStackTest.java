@@ -2,12 +2,14 @@ package com.luxoft.datastructures.stack;
 
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ArrayStackTest {
+    @DisplayName("Testing push and pop")
     @Test
     public void testPushAndPop(){
         ArrayStack arrayStack = new ArrayStack();
@@ -110,4 +112,15 @@ public class ArrayStackTest {
         });
 
     }
+    @Test
+    public void testContainsTwoIdenticalObjects(){
+        ArrayStack arrayStack = new ArrayStack();
+        arrayStack.push("A");
+        arrayStack.push("B");
+        arrayStack.push("B");
+        arrayStack.push("A");
+        assertTrue(arrayStack.duplicate());
+
+    }
+
 }

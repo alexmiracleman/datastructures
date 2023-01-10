@@ -16,8 +16,8 @@ public class ArrayStack implements Stack {
         size++;
     }
 
-    private void ensureCapacity(){
-        if (array.length == size){
+    private void ensureCapacity() {
+        if (array.length == size) {
             Object[] newArray = new Object[array.length * 2];
             for (int i = 0; i < array.length; i++) {
                 newArray[i] = array[i];
@@ -28,7 +28,7 @@ public class ArrayStack implements Stack {
     }
 
     public Object pop() {
-        if (isEmpty()){
+        if (isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
         Object result = array[size - 1];
@@ -42,10 +42,10 @@ public class ArrayStack implements Stack {
 
     public boolean contains(Object value) {
         for (Object valueInStack : array) {
-            if(value == valueInStack){
+            if (value == valueInStack) {
                 return true;
             }
-            
+
         }
         return false;
     }
@@ -61,5 +61,19 @@ public class ArrayStack implements Stack {
     public void clear() {
         size = 0;
 
+    }
+
+    public boolean duplicate() {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i].equals(array[j])) {
+
+                    return true;
+                }
+
+            }
+
+        }
+        return false;
     }
 }

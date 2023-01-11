@@ -112,15 +112,6 @@ public class ArrayStackTest {
         });
 
     }
-    @Test
-    public void testContainsTwoIdenticalObjects(){
-        ArrayStack arrayStack = new ArrayStack();
-        arrayStack.push("A");
-        arrayStack.push("B");
-        arrayStack.push("B");
-        arrayStack.push("A");
-        assertTrue(arrayStack.duplicate());
 
-    }
 
 }

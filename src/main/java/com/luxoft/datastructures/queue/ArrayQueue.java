@@ -27,14 +27,13 @@ public class ArrayQueue implements Queue{
 
     public Object dequeue() {
         if(isEmpty()){
-            throw new IllegalStateException("Stack is empty");
+            throw new IllegalStateException("Queue is empty");
         }
         Object result = array[0];
-        Object[] newArray = new Object[size - 1];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = array[i+1];
+        for (int i = 0; i < size - 1; i++) {
+            array[i] = array[i + 1];
         }
-        array = newArray;
+
         size--;
 
         return result;
@@ -69,6 +68,9 @@ public class ArrayQueue implements Queue{
 
 
     public void clear() {
+        for (int i = 0; i < size; i++) {
+            array[i] = null;
+        }
         size = 0;
 
     }

@@ -1,12 +1,12 @@
-package com.luxoft.datastructures.stack;
+package com.luxoft.datastructures.queue;
 
-import com.luxoft.datastructures.queue.ArrayQueue;
+import com.luxoft.datastructures.queue.ArrayQueuetest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ArrayQueueTest {
+public class ArrayQueuetest {
     @DisplayName("Enqueuing and Dequeuing array")
     @Test
     public void testEnqueueAndDequeue(){

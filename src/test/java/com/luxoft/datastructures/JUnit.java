@@ -1,6 +1,9 @@
 package com.luxoft.datastructures;
 
-import com.luxoft.datastructures.list.Test;
+import com.luxoft.datastructures.list.ArrayListTest;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -20,9 +23,15 @@ public class JUnit {
         ArrayList testMethods = getTests(clazz);
         for (int i = 0; i < testMethods.size(); i++) {
             Method testMethod = (Method) testMethods.get(i);
-            System.out.println("Running test: " + testMethod.getName());
-            testMethod.invoke(testInstance);
-            System.out.println("Test: " + testMethod.getName() + " success!");
+            try {
+                testMethod.invoke(testInstance);
+                System.out.println("Test: " + testMethod.getName() + " success!");
+            } catch (Throwable error) {
+                System.out.println("Test: " + testMethod.getName() + " failed!");
+
+            }
+
+
         }
     }
 

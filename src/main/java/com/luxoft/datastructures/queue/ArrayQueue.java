@@ -1,5 +1,7 @@
 package com.luxoft.datastructures.queue;
 
+import java.util.Objects;
+
 public class ArrayQueue implements Queue{
     private int size;
 
@@ -40,6 +42,9 @@ public class ArrayQueue implements Queue{
     }
 
     public Object peek() {
+        if(isEmpty()){
+            throw new IllegalStateException("Queue is empty");
+        }
         return array[size - 1];
     }
 
@@ -77,8 +82,11 @@ public class ArrayQueue implements Queue{
 
 
     public boolean duplicates() {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
+        if(size < 2) {
+            throw new IllegalStateException("Queue size is less than 2 elements!");
+        }
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = i + 1; j < size; j++) {
                 if (array[i].equals(array[j])) {
 
                     return true;

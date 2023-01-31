@@ -18,13 +18,17 @@ public class ArrayQueuetest {
 
     }
     @Test
-    public void testContainsTwoIdenticalObjects(){
+    public void testContainsTwoIdenticalObjectsTrueAndFalse(){
         ArrayQueue arrayQueue = new ArrayQueue();
         arrayQueue.enqueue("A");
         arrayQueue.enqueue("B");
-        arrayQueue.enqueue("B");
+        arrayQueue.enqueue("C");
+        arrayQueue.enqueue("D");
+        arrayQueue.enqueue("E");
+        assertFalse(arrayQueue.duplicates());
         arrayQueue.enqueue("A");
         assertTrue(arrayQueue.duplicates());
+
 
     }
     @Test
@@ -56,12 +60,13 @@ public class ArrayQueuetest {
         assertFalse(arrayQueue.isEmpty());
     }
     @Test
-    public void testContainsReturnTrue(){
+    public void testContainsReturnTruAandFalse(){
         ArrayQueue arrayQueue = new ArrayQueue();
         arrayQueue.enqueue("A");
         arrayQueue.enqueue("B");
 
         assertTrue(arrayQueue.contains("A"));
+        assertFalse(arrayQueue.contains("C"));
 
     }
     @Test

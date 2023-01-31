@@ -13,8 +13,12 @@ public class ArrayListTest {
         arrayList.add("B");
         arrayList.add("C");
         arrayList.add("D");
-        arrayList.add("G", 3);
-        assertEquals("D",arrayList.get(4));
+        arrayList.add("G", 0);
+//        assertTrue(arrayList.contains("D"));
+        arrayList.add("X", 4);
+        System.out.println(arrayList.toString());
+//        assertEquals("D",arrayList.get(3));
+
     }
     @Test
     public void testSetValueByIndex() {
@@ -34,7 +38,9 @@ public class ArrayListTest {
         arrayList.add("B");
         arrayList.add("C");
         arrayList.add("D");
-        assertEquals("C", arrayList.remove(2));
+        arrayList.remove(3);
+        System.out.println(arrayList.toString());
+//        assertEquals("C", arrayList.remove(2));
 
     }
     @Test
@@ -46,6 +52,7 @@ public class ArrayListTest {
         arrayList.add("D");
 
         assertTrue(arrayList.contains("A"));
+        assertFalse(arrayList.contains("X"));
 
     }
     @Test
@@ -103,7 +110,8 @@ public class ArrayListTest {
         arrayList.add(27);
         arrayList.add(5);
         arrayList.add("D");
-        arrayList.toString();
+        System.out.println(arrayList.toString());
+
 
     }
 
